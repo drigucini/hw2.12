@@ -11,19 +11,19 @@ import java.util.Set;
 @RestController
 @RequestMapping("/order")
 public class OrderController {
-    private final Service service;
+    private final Basket basket;
 
-    public OrderController(Service service) {
-        this.service = service;
+    public OrderController(Basket basket) {
+        this.basket = basket;
     }
 
     @GetMapping(path = "/add")
-    public Set<Integer> add(@RequestParam("ID") List<Integer> goodID) {
-        return service.add(goodID);
+    public Set<Integer> add(@RequestParam("ID") List<Integer> goodIDs) {
+        return basket.add(goodIDs);
     }
 
     @GetMapping(path = "/get")
     public Set<Integer> get() {
-        return service.get();
+        return basket.get();
     }
 }

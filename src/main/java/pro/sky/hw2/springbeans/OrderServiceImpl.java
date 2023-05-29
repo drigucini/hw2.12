@@ -14,10 +14,10 @@ public class OrderServiceImpl implements Service {
     }
 
     public Set<Integer> add(List<Integer> goodIDs) {
-        return Set.of(9, 8, 7);
+        return orderRepository.add(goodIDs);
     }
 
     public Set<Integer> get() {
-        return Set.of(1, 2, 3);
+        return orderRepository.get();
     }
 }
